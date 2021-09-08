@@ -1,3 +1,4 @@
+'use strict';
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,6 +8,7 @@ var helmet = require('helmet');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var subjectRouter = require('./routes/subjects');
 
 var Subject = require('./models/subject');
 var Unit = require('./models/unit');
@@ -39,6 +41,7 @@ app.use(helmet());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/subjects',subjectRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  table 
+    tr
+      th subject name
+      th subject URL 
+    each  subject in subjects
+      tr 
+        td 
+          h3  #{subject.subjectname}
+        td 
+          a(href=`/subjects/${subject.subjectId}`) /subjects/#{subject.subjectId}
