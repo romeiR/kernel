@@ -7,6 +7,22 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var Subject = require('./models/subject');
+var Unit = require('./models/unit');
+var Question = require('./models/question');
+var Answer = require('./models/answer');
+
+Subject.sync().then(() => {
+  Unit.belongsTo(Subject, {foregnKey: 'sbjectId'});
+  Unit.sync().then(() => {
+    Question.belongsTo(Unit, {foregnKey: 'unitId'});
+    Question.sync().then(() => {
+      Answer.belongsTo(Question, {foregnKey: 'questionId'});
+      Answer.sync();
+    });
+  });
+});
+
 var app = express();
 
 // view engine setup
