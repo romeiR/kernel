@@ -9,6 +9,8 @@ var helmet = require('helmet');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var subjectRouter = require('./routes/subjects');
+var adminRouter = require('./routes/admin');
+var unitRouter = require('./routes/unit');
 
 var Subject = require('./models/subject');
 var Unit = require('./models/unit');
@@ -42,6 +44,8 @@ app.use(helmet());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/subjects',subjectRouter);
+app.use('/admin', adminRouter);
+app.use('/subjects/', unitRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,14 @@
+extends layout
+
+block content 
+  a(href="/subjects") subjects 
+  form(action="/admin", method="post") 
+    div 
+      input(type="text" name="admin_pass")
+    button(type="submit") Enter the admin room
+
+  if subject
+    form(action="/admin/new", method="post")
+      div 
+        input(type="text" name="subject_name")
+      button(type="submit") make submit 
