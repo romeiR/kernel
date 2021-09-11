@@ -3,7 +3,7 @@ const loader = require('./sequelize-loader');
 const Sequelize = loader.Sequelize;
 
 const Question = loader.database.define(
-  'questnios',
+  'questions',
   {
     questiontitle: {
       type: Sequelize.STRING,
@@ -12,7 +12,8 @@ const Question = loader.database.define(
     questionId: {
       type: Sequelize.INTEGER,
       primaryKey: true,
-      alloNull: false
+      alloNull: false,
+      autoIncrement: true
     },
     questionq: {
       type: Sequelize.STRING,

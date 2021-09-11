@@ -12,7 +12,8 @@ const Unit = loader.database.define(
     unitId: {
       type: Sequelize.INTEGER,
       primaryKey: true,
-      allowNull: false
+      allowNull: false,
+      autoIncrement: true
     },
     subjectId: {
       type: Sequelize.INTEGER,

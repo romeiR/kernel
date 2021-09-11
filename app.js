@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var subjectRouter = require('./routes/subjects');
 var adminRouter = require('./routes/admin');
 var unitRouter = require('./routes/unit');
+var questionRouter = require('./routes/questions');
 
 var Subject = require('./models/subject');
 var Unit = require('./models/unit');
@@ -45,7 +46,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/subjects',subjectRouter);
 app.use('/admin', adminRouter);
-app.use('/subjects/', unitRouter);
+app.use('/units', unitRouter);
+app.use('/questions',questionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

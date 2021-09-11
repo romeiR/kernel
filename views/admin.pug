@@ -8,7 +8,28 @@ block content
     button(type="submit") Enter the admin room
 
   if subject
-    form(action="/admin/new", method="post")
+    form(action="/admin/new/subject", method="post")
       div 
+        p enter subject name
         input(type="text" name="subject_name")
       button(type="submit") make submit 
+    form(action="/admin/new/unit", method="post")
+      div 
+        p enter unit name
+        input(type="text" name="unitname")
+      div 
+        p enter subjectname of the unit 
+        input(type="text" name="unitsubject")
+      button(type="submit") make unit 
+    form(action="/admin/new/question", method='post')
+      div 
+        p enter question title
+        input(type="text" name="questiontitle")
+      div 
+        p enter the question
+        input(type="text" name="questionq")
+      div  
+        p enter unit of question 
+        input(type="text" name="questionunit")
+      button(type="submit") make question
+      

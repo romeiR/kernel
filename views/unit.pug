@@ -1,4 +1,14 @@
 extends layout
 
 block content
-  
+  a(href="/subjects") subject
+  table.table 
+    tr 
+      th unitname 
+      th unitId 
+    each unit in units 
+      tr
+        td
+          p #{unit.unitname}
+        td 
+          a(href=`/questions/${unit.unitId}`) questions/#{unit.unitId}
